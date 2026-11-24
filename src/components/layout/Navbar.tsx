@@ -6,9 +6,10 @@ import { portfolioConfig } from '../../data/portfolio.config';
 interface NavbarProps {
   onContactClick: () => void;
   onBlogClick?: () => void;
+  onTerminalClick?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onBlogClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onBlogClick, onTerminalClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -91,6 +92,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick, onBlogClick }) =
               </a>
             );
           })}
+          {onTerminalClick && (
+            <button
+              type="button"
+              onClick={onTerminalClick}
+              className="caption-1 px-75 py-[3px] rounded-full text-[#34d399] hover:text-white hover:bg-surface-800/60 transition-colors flex items-center gap-1 font-mono border border-[#34d399]/30 ml-25"
+              title="Open Systems Interactive CLI Terminal (Ctrl+K)"
+            >
+              <span>CLI</span>
+            </button>
+          )}
           {onBlogClick && (
             <button
               type="button"

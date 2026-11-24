@@ -114,12 +114,20 @@ export const App: React.FC = () => {
       <ScrollDrone />
 
       {/* Floating Blurred Navigation Bar */}
-      <Navbar onContactClick={handleContactClick} onBlogClick={handleOpenBlog} />
+      <Navbar
+        onContactClick={handleContactClick}
+        onBlogClick={handleOpenBlog}
+        onTerminalClick={() => setIsTerminalOpen(true)}
+      />
 
       {/* Main Semantic Landmark */}
       <main id="main-content" className="flex-1">
         {/* 1. Immersive Video Background Hero Section */}
-        <Hero onContactClick={handleContactClick} onBlogClick={handleOpenBlog} />
+        <Hero
+          onContactClick={handleContactClick}
+          onBlogClick={handleOpenBlog}
+          onTerminalClick={() => setIsTerminalOpen(true)}
+        />
 
         {/* 2. Personal Story & Home Lab Setup */}
         <AboutMe />

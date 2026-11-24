@@ -4,6 +4,7 @@ import { portfolioConfig } from '../../data/portfolio.config';
 interface HeroProps {
   onContactClick: () => void;
   onBlogClick?: () => void;
+  onTerminalClick?: () => void;
 }
 
 const ROTATING_DISTRIBUTED_TERMS = [
@@ -80,7 +81,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick, onTerminalClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const videoARef = useRef<HTMLVideoElement>(null);
   const videoBRef = useRef<HTMLVideoElement>(null);
@@ -342,6 +343,16 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick }) => {
 
         {/* Desktop Nav Actions */}
         <div className="pjs-nav-actions">
+          {onTerminalClick && (
+            <button
+              type="button"
+              onClick={onTerminalClick}
+              className="pjs-btn pjs-btn-login text-[#34d399] border border-[#34d399]/30 hover:border-[#34d399]/60 hover:bg-[#34d399]/10 transition-all font-mono"
+              title="Open Systems Interactive CLI Terminal (Ctrl+K)"
+            >
+              CLI Shell
+            </button>
+          )}
           {onBlogClick && (
             <button
               type="button"
@@ -391,6 +402,18 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick }) => {
         <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
         <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
         <a href="#lab" onClick={() => setMenuOpen(false)}>Lab</a>
+        {onTerminalClick && (
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              onTerminalClick();
+            }}
+            className="text-left py-2 font-mono text-sm text-[#34d399] hover:text-white transition-colors"
+          >
+            CLI Terminal (Ctrl+K)
+          </button>
+        )}
         {onBlogClick && (
           <button
             type="button"
