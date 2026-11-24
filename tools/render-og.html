@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Naditha Gallella - Open Graph Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background-color: #090b0f;
+      color: #ededed;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 56px 64px;
+    }
+
+    /* Cyber grid overlay */
+    .cyber-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Radial ambient glow orbs */
+    .glow-cyan {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(0, 240, 255, 0) 70%);
+      pointer-events: none;
+    }
+    .glow-emerald {
+      position: absolute;
+      bottom: -150px;
+      left: 100px;
+      width: 600px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, rgba(52, 211, 153, 0) 70%);
+      pointer-events: none;
+    }
+
+    /* Cyber border accents */
+    .border-frame {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      pointer-events: none;
+      border-radius: 12px;
+    }
+    .corner-bracket {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: #00f0ff;
+      border-style: solid;
+      pointer-events: none;
+    }
+    .corner-tl { top: 16px; left: 16px; border-width: 3px 0 0 3px; }
+    .corner-tr { top: 16px; right: 16px; border-width: 3px 3px 0 0; }
+    .corner-bl { bottom: 16px; left: 16px; border-width: 0 0 3px 3px; }
+    .corner-br { bottom: 16px; right: 16px; border-width: 0 3px 3px 0; }
+
+    /* Top Telemetry Header */
+    .header-bar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Geist Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 20px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      border-radius: 9999px;
+      color: #34d399;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #34d399;
+    }
+    .header-meta {
+      display: flex;
+      gap: 24px;
+    }
+    .header-meta span {
+      color: #64748b;
+    }
+    .header-meta strong {
+      color: #00f0ff;
+      font-weight: 500;
+    }
+
+    /* Main Body */
+    .content-area {
+      position: relative;
+      z-index: 10;
+      margin: auto 0;
+    }
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #00f0ff;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .name-title {
+      font-size: 68px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+    }
+    .tagline {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: #94a3b8;
+      max-width: 880px;
+      margin-bottom: 32px;
+    }
+
+    /* Tech Stack Pills */
+    .stack-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 1020px;
+    }
+    .stack-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(18, 22, 31, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: #e2e8f0;
+      backdrop-filter: blur(8px);
+    }
+    .stack-pill .pill-dot {
+      width: 6px;
+      height: 6px;
+      background: #00f0ff;
+      border-radius: 50%;
+    }
+
+    /* Footer Telemetry Strip */
+    .footer-bar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Geist Mono', monospace;
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+    }
+    .footer-url {
+      color: #00f0ff;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .footer-contact {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="cyber-grid"></div>
+  <div class="glow-cyan"></div>
+  <div class="glow-emerald"></div>
+
+  <div class="border-frame"></div>
+  <div class="corner-bracket corner-tl"></div>
+  <div class="corner-bracket corner-tr"></div>
+  <div class="corner-bracket corner-bl"></div>
+  <div class="corner-bracket corner-br"></div>
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      SYS_STATUS: ALL SYSTEMS OPERATIONAL
+    </div>
+    <div class="header-meta">
+      <div>HOST: <strong>HYPER-V CLOUD CORE</strong></div>
+      <div>LATENCY: <strong>12ms</strong></div>
+      <div>SEC: <strong>ZERO-TRUST</strong></div>
+    </div>
+  </div>
+
+  <!-- Main Identity -->
+  <div class="content-area">
+    <div class="role-badge">
+      <span>//</span> CLOUD &amp; DEVOPS INFRASTRUCTURE ENGINEER
+    </div>
+    <h1 class="name-title">Naditha Gallella</h1>
+    <p class="tagline">
+      Architecting resilient cloud infrastructure, Kubernetes clusters, secure perimeter networks, and mission-critical distributed systems.
+    </p>
+
+    <!-- Tech Stack Badges -->
+    <div class="stack-grid">
+      <div class="stack-pill"><div class="pill-dot"></div>AWS Cloud Migration</div>
+      <div class="stack-pill"><div class="pill-dot"></div>Kubernetes &amp; Docker</div>
+      <div class="stack-pill"><div class="pill-dot"></div>Fortinet &amp; pfSense Firewalls</div>
+      <div class="stack-pill"><div class="pill-dot"></div>Zero-Trust WireGuard VPN</div>
+      <div class="stack-pill"><div class="pill-dot"></div>Windows Hyper-V</div>
+      <div class="stack-pill"><div class="pill-dot"></div>Veeam Disaster Recovery</div>
+      <div class="stack-pill"><div class="pill-dot"></div>ESP32 IoT Telemetry</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-bar">
+    <div class="footer-url">
+      <span>LIVE PROFILE:</span> https://nadithaa.github.io/Naditha_personal_profile/
+    </div>
+    <div class="footer-contact">
+      <span>CONTACT:</span> naditha100@gmail.com
+    </div>
+  </div>
+</body>
+</html>
