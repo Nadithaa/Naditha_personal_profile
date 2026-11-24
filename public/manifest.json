@@ -1,0 +1,17 @@
+{
+  "name": "Naditha Gallella | Systems & Cloud Infrastructure",
+  "short_name": "Naditha G.",
+  "description": "Cloud, DevOps & Systems Infrastructure Engineer personal portfolio and field notes.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b0f",
+  "theme_color": "#090b0f",
+  "icons": [
+    {
+      "src": "./drone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404: Packet Dropped | Naditha Gallella</title>
+    <meta http-equiv="refresh" content="6;url=./" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #090b0f;
+        color: #EDEDED;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+      }
+      .card {
+        max-width: 580px;
+        width: 100%;
+        background: rgba(18, 19, 24, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 36px 28px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        text-align: left;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #f43f5e;
+        background: rgba(244, 63, 94, 0.12);
+        border: 1px solid rgba(244, 63, 94, 0.3);
+        padding: 4px 10px;
+        border-radius: 9999px;
+        margin-bottom: 18px;
+      }
+      .badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #f43f5e;
+      }
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #A1A1A1;
+        margin-bottom: 24px;
+      }
+      .terminal-box {
+        background: #040507;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+        padding: 14px;
+        font-size: 12px;
+        color: #00f0ff;
+        margin-bottom: 24px;
+        overflow-x: auto;
+      }
+      .terminal-box .err {
+        color: #f87171;
+      }
+      .terminal-box .dim {
+        color: #666666;
+      }
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+      }
+      .btn-primary {
+        background: #00f0ff;
+        color: #000000;
+      }
+      .btn-primary:hover {
+        background: #38bdf8;
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .timer {
+        font-size: 11px;
+        color: #666666;
+        margin-top: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="badge">Packet Dropped // 404</div>
+      <h1>Requested Route Unreachable</h1>
+      <p>The network path you attempted to resolve does not exist or has been re-routed by perimeter access rules.</p>
+
+      <div class="terminal-box">
+        <div><span class="dim">[EDGE-GW-01]</span> <span class="err">DROP:</span> Destination subnet unreachable</div>
+        <div><span class="dim">[DNS]</span> NXDOMAIN query failure</div>
+        <div><span class="dim">[ROUTING]</span> Fallback gateway route: <span style="color:#ffffff;">./</span></div>
+      </div>
+
+      <div class="btn-row">
+        <a href="./" class="btn btn-primary">← Return to Portfolio</a>
+        <a href="./#/blog" class="btn btn-secondary">Explore Blog ↗</a>
+      </div>
+
+      <div class="timer">
+        Auto-redirecting to homepage in <span id="sec">5</span> seconds...
+      </div>
+    </div>
+
+    <script>
+      let count = 5;
+      const el = document.getElementById('sec');
+      const interval = setInterval(() => {
+        count--;
+        if (el) el.textContent = count;
+        if (count <= 0) {
+          clearInterval(interval);
+          window.location.href = './';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
