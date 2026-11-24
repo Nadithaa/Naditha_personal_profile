@@ -29,7 +29,7 @@ export const AboutMe: React.FC = () => {
                 Personal Background
               </Badge>
               <h2 className="heading-3 text-white">
-                Engineering Philosophy: From Silicon to Cloud End to End
+                Engineering Philosophy: From Silicon to Cloud, End to End
               </h2>
               <p className="title-2 text-[#EDEDED] font-medium leading-snug">
                 {portfolioConfig.about.bioLead}
@@ -109,7 +109,7 @@ export const AboutMe: React.FC = () => {
               </div>
 
               <div className="pt-150 border-t border-border-subtle caption-5 font-mono text-[#717171] flex flex-wrap items-center justify-between gap-2">
-                <span>Scale: 150+ Prod VMs and Multi-cloud environment</span>
+                <span>Scale: 150+ Prod VMs & Multi-Cloud Environments</span>
                 <span>Compliance: SOC 2 | ISO 27001</span>
               </div>
             </div>

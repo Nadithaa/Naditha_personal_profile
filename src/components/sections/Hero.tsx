@@ -29,7 +29,7 @@ const ROTATING_DISTRIBUTED_TERMS = [
   'Terraform code',
   'server hardware',
   'monitoring tools',
-  'cyber security',
+  'cybersecurity',
   'cloud storage',
   'speed & uptime',
   'zero trust',
@@ -50,7 +50,7 @@ const ROTATING_DISTRIBUTED_TERMS = [
   'incident response',
   'database scaling',
   'IT operations',
-  'WiFi & LAN setups',
+  'Wi-Fi & LAN setups',
   'hardware servers',
   'access control',
   'edge networks',
@@ -430,7 +430,7 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick }) => {
       <div className="pjs-hero-inner">
         <h1>
           <span className="ln">
-            <span className="ln-i hero-title-prefix">Let's discuss about</span>
+            <span className="ln-i hero-title-prefix">Let's discuss</span>
           </span>
           <span className="ln">
             <span className="ln-i hero-typewriter-line">
@@ -444,8 +444,8 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick, onBlogClick }) => {
         </h1>
 
         <p className="pjs-sub">
-          Hands on systems engineer passionate about infrastructure reliability.<br />
-          I bridge physical computer hardware, Hyper V virtualization, and network firewalls<br />
+          Hands-on systems engineer passionate about infrastructure reliability.<br />
+          I bridge physical computer hardware, Hyper-V virtualization, and network firewalls<br />
           with automated AWS cloud deployments.
         </p>
 

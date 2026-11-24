@@ -6,7 +6,7 @@ export const portfolioConfig: ProfileConfig = {
   location: "San Francisco, CA (Open to Worldwide Remote)",
   availability: "Available for Senior Infrastructure and DevOps Roles",
   email: "naditha100@gmail.com",
-  github: "https://github.com/nadithagallella",
+  github: "https://github.com/Nadithaa",
   linkedin: "https://linkedin.com/in/naditha-gallella",
 
   heroHeadline: "I engineer resilient cloud systems, secure networks, and hardware",
@@ -687,7 +687,7 @@ void publishTelemetry(float temp, float humidity) {
       category: "Interactive Runbook & Field Guide",
       badge: "MIGRATION PLAYBOOK // STEP-BY-STEP",
       title: "Step-by-Step Production AWS Migration Blueprint",
-      tagline: "A battle-tested 4-phase runbook for migrating on-premise virtual machines and databases to AWS with zero unplanned downtime.",
+      tagline: "A battle-tested 4-phase runbook for migrating on-premises virtual machines and databases to AWS with zero unplanned downtime.",
       description: "A comprehensive practical blueprint covering discovery, network transit tunnels, continuous database replication, and cutover day execution. Built from real migrations spanning 42+ enterprise workloads.",
       accentColor: "#38bdf8",
       metrics: [

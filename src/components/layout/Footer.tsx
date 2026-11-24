@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#projects" className="hover:text-white transition-colors">
-                  Hyper V and Backup
+                  Hyper-V and Backup
                 </a>
               </li>
               <li>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#faq" className="hover:text-white transition-colors">
-                  Q and A
+                  FAQ & Questions
                 </a>
               </li>
               <li>
@@ -129,7 +129,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-300 flex flex-col sm:flex-row items-center justify-between gap-100 caption-4 text-[#717171]">
           <div>
-            &copy; {new Date().getFullYear()} {portfolioConfig.name}. Designed and engineered with React, Vite and Tailwind CSS.
+            &copy; {new Date().getFullYear()} {portfolioConfig.name}. Designed and engineered with React, Vite, and Tailwind CSS.
           </div>
           <div className="flex items-center gap-200">
             <button
