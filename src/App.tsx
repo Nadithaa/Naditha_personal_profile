@@ -12,17 +12,34 @@ import { FAQSection } from './components/sections/FAQSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { ProjectModal } from './components/ui/ProjectModal';
 import { BlogModal } from './components/ui/BlogModal';
+import { TerminalModal } from './components/ui/TerminalModal';
 import { BlogPage } from './components/pages/BlogPage';
 import { Toast } from './components/ui/Toast';
 import { ScrollDrone } from './components/3d/ScrollDrone';
 import { LanCableVerticalSpine } from './components/network/LanCableVerticalSpine';
+import { Terminal as TerminalIcon } from 'lucide-react';
 import { ProjectItem, BlogPostItem } from './types';
 
 export const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [selectedPost, setSelectedPost] = useState<BlogPostItem | null>(null);
   const [isBlogPageOpen, setIsBlogPageOpen] = useState<boolean>(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleGlobalKeys = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsTerminalOpen((prev) => !prev);
+      } else if (e.key === '`' && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)) {
+        e.preventDefault();
+        setIsTerminalOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeys);
+    return () => window.removeEventListener('keydown', handleGlobalKeys);
+  }, []);
 
   useEffect(() => {
     const handleHash = () => {
@@ -66,6 +83,26 @@ export const App: React.FC = () => {
           post={selectedPost}
           onClose={() => setSelectedPost(null)}
         />
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+        <TerminalModal
+          isOpen={isTerminalOpen}
+          onClose={() => setIsTerminalOpen(false)}
+          onSelectProject={(project) => setSelectedProject(project)}
+          onSelectArticle={(post) => setSelectedPost(post)}
+          onToast={showToast}
+        />
+        <button
+          onClick={() => setIsTerminalOpen(true)}
+          className="fixed bottom-6 left-6 z-40 hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-900/90 hover:bg-surface-850 border border-white/10 hover:border-[#00f0ff]/50 backdrop-blur-md text-xs font-mono text-white/90 shadow-2xl transition-all duration-200 group"
+          aria-label="Open Systems CLI Terminal"
+        >
+          <TerminalIcon className="w-3.5 h-3.5 text-[#00f0ff] group-hover:animate-pulse" />
+          <span>CLI Shell</span>
+          <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] text-white/60 font-mono">Ctrl+K</kbd>
+        </button>
         <Toast message={toastMessage} />
       </div>
     );
@@ -129,6 +166,26 @@ export const App: React.FC = () => {
         post={selectedPost}
         onClose={() => setSelectedPost(null)}
       />
+
+      {/* Systems Interactive CLI Terminal Modal */}
+      <TerminalModal
+        isOpen={isTerminalOpen}
+        onClose={() => setIsTerminalOpen(false)}
+        onSelectProject={(project) => setSelectedProject(project)}
+        onSelectArticle={(post) => setSelectedPost(post)}
+        onToast={showToast}
+      />
+
+      {/* Floating CLI Terminal Trigger Button */}
+      <button
+        onClick={() => setIsTerminalOpen(true)}
+        className="fixed bottom-6 left-6 z-40 hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-900/90 hover:bg-surface-850 border border-white/10 hover:border-[#00f0ff]/50 backdrop-blur-md text-xs font-mono text-white/90 shadow-2xl transition-all duration-200 group"
+        aria-label="Open Systems CLI Terminal"
+      >
+        <TerminalIcon className="w-3.5 h-3.5 text-[#00f0ff] group-hover:animate-pulse" />
+        <span>CLI Shell</span>
+        <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] text-white/60 font-mono">Ctrl+K</kbd>
+      </button>
 
       {/* Interactive Vertical LAN Cable Spine (Landing Page to Others) */}
       <LanCableVerticalSpine />
