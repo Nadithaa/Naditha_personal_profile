@@ -50,7 +50,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopySuccess })
                   Let us connect and talk systems
                 </h2>
                 <p className="body-3 text-[#A1A1A1]">
-                  Whether you have an opening on your infrastructure team, need hands on cloud migration expertise, or want to discuss hardware projects, feel free to reach out directly.
+                  Whether you have an opening on your infrastructure team, need hands-on cloud migration expertise, or want to discuss hardware projects, feel free to reach out directly.
                 </p>
               </div>
 

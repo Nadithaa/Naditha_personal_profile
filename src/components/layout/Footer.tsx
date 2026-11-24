@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="body-5 text-[#888888] max-w-sm">
-              {portfolioConfig.roleTitle}. Passionate about hands on systems reliability, firewall perimeters, and physical IoT telemetry.
+              {portfolioConfig.roleTitle}. Passionate about hands-on systems reliability, firewall perimeters, and physical IoT telemetry.
             </p>
             <div className="flex items-center gap-75 pt-50">
               <a

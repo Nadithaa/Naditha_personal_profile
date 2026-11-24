@@ -822,7 +822,7 @@ void publishTelemetry(float temp, float humidity) {
     {
       category: "Containers and Orchestration",
       skills: [
-        { name: "Docker", level: "Expert", tags: ["Multi Stage", "Distroless", "Compose", "Trivy"] },
+        { name: "Docker", level: "Expert", tags: ["Multi-Stage", "Distroless", "Compose", "Trivy"] },
         { name: "Kubernetes", level: "Advanced", tags: ["Control Plane", "Helm", "Ingress", "ArgoCD"] },
         { name: "CI / CD Pipelines", level: "Expert", tags: ["GitHub Actions", "GitLab CI", "Automated Testing"] }
       ]
@@ -831,14 +831,14 @@ void publishTelemetry(float temp, float humidity) {
       category: "Networking and Perimeter Security",
       skills: [
         { name: "Firewalls and Routing", level: "Expert", tags: ["OPNsense", "pfSense", "iptables", "VLANs", "BGP"] },
-        { name: "VPN Architectures", level: "Expert", tags: ["WireGuard", "IPsec IKEv2", "OpenVPN", "Zero Trust"] },
+        { name: "VPN Architectures", level: "Expert", tags: ["WireGuard", "IPsec IKEv2", "OpenVPN", "Zero-Trust"] },
         { name: "Security and Hardening", level: "Advanced", tags: ["Suricata IDS", "RADIUS 802.1X", "TLS Certificates"] }
       ]
     },
     {
       category: "Virtualization and Disaster Recovery",
       skills: [
-        { name: "Windows Hyper V", level: "Expert", tags: ["Failover Cluster", "Storage Spaces Direct", "PowerShell"] },
+        { name: "Windows Hyper-V", level: "Expert", tags: ["Failover Cluster", "Storage Spaces Direct", "PowerShell"] },
         { name: "VirtualBox and KVM", level: "Advanced", tags: ["Lab Environments", "QEMU", "Automation"] },
         { name: "Veeam Backup and Replication", level: "Expert", tags: ["Immutable Storage", "SureBackup", "Disaster Recovery"] }
       ]
@@ -857,32 +857,32 @@ void publishTelemetry(float temp, float humidity) {
     {
       id: 'faq-1',
       category: 'Cloud and Migrations',
-      question: "How do you guarantee zero downtime during an AWS database migration?",
-      answer: "I establish continuous replication prior to cutover using AWS Database Migration Service (DMS) alongside transaction log shipping. The cloud database remains synchronized in real time with the on premises source. During the scheduled maintenance window, I switch traffic at the DNS or load balancer level once replication lag reaches zero, ensuring no transactions are dropped."
+      question: "How do you guarantee zero-downtime during an AWS database migration?",
+      answer: "I establish continuous replication prior to cutover using AWS Database Migration Service (DMS) alongside transaction log shipping. The cloud database remains synchronized in real-time with the on-premises source. During the scheduled maintenance window, I switch traffic at the DNS or load balancer level once replication lag reaches zero, ensuring no transactions are dropped."
     },
     {
       id: 'faq-2',
       category: 'Cloud and Migrations',
       question: "Which cloud provider are you most experienced with?",
-      answer: "AWS is my primary cloud platform, where I specialize in VPC networking, ECS container services, RDS/Aurora databases, and IAM security. I also manage enterprise workloads on Microsoft Azure and Google Cloud, frequently deploying cross cloud infrastructure using unified Terraform configurations."
+      answer: "AWS is my primary cloud platform, where I specialize in VPC networking, ECS container services, RDS/Aurora databases, and IAM security. I also manage enterprise workloads on Microsoft Azure and Google Cloud, frequently deploying cross-cloud infrastructure using unified Terraform configurations."
     },
     {
       id: 'faq-3',
       category: 'Networking and Security',
       question: "What is your approach to firewall design and network segmentation?",
-      answer: "I apply strict zero trust principles. Networks are segmented into isolated VLANs (Management, Corporate LAN, DMZ, and IoT). Intersubnet traffic is denied by default and allowed only through explicit firewall rules on OPNsense or pfSense. Administrative management interfaces are strictly accessible via mutual TLS or authenticated WireGuard VPN tunnels."
+      answer: "I apply strict zero-trust principles. Networks are segmented into isolated VLANs (Management, Corporate LAN, DMZ, and IoT). Inter-subnet traffic is denied by default and allowed only through explicit firewall rules on OPNsense or pfSense. Administrative management interfaces are strictly accessible via mutual TLS or authenticated WireGuard VPN tunnels."
     },
     {
       id: 'faq-4',
       category: 'Containers and CI/CD',
       question: "Do you build bare metal Kubernetes clusters or managed cloud Kubernetes?",
-      answer: "Both. For cloud environments, managed services like AWS EKS or Azure AKS provide high control plane reliability. For private datacenters or cost sensitive deployments, I architect self hosted Kubernetes clusters on Linux nodes with stacked etcd, HAProxy virtual IPs, and GitOps synchronization via ArgoCD."
+      answer: "Both. For cloud environments, managed services like AWS EKS or Azure AKS provide high control plane reliability. For private datacenters or cost-sensitive deployments, I architect self-hosted Kubernetes clusters on Linux nodes with stacked etcd, HAProxy virtual IPs, and GitOps synchronization via ArgoCD."
     },
     {
       id: 'faq-5',
       category: 'Virtualization and Backup',
-      question: "How do you protect Windows Hyper V environments against ransomware?",
-      answer: "By enforcing the 3 2 1 1 0 backup rule using Veeam Backup and Replication. Backups are stored on immutable Linux repositories where file retention locks prevent deletion or encryption even with compromised domain credentials. Weekly automated SureBackup drills boot backup images in isolated sandboxes to verify data integrity."
+      question: "How do you protect Windows Hyper-V environments against ransomware?",
+      answer: "By enforcing the 3-2-1-1-0 backup rule using Veeam Backup and Replication. Backups are stored on immutable Linux repositories where file retention locks prevent deletion or encryption even with compromised domain credentials. Weekly automated SureBackup drills boot backup images in isolated sandboxes to verify data integrity."
     },
     {
       id: 'faq-6',
@@ -893,7 +893,7 @@ void publishTelemetry(float temp, float humidity) {
     {
       id: 'faq-7',
       category: 'Collaboration',
-      question: "Are you open to full time remote or contract engineering roles?",
+      question: "Are you open to full-time remote or contract engineering roles?",
       answer: "Yes. I am actively available for senior infrastructure, cloud, DevOps, and systems engineering positions globally. I have extensive experience operating across distributed time zones and collaborating with engineering teams via standard Git workflows and documentation."
     },
     {

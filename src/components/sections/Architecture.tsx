@@ -23,7 +23,7 @@ export const Architecture: React.FC = () => {
             How I design and build systems
           </h2>
           <p className="body-3 text-[#A1A1A1]">
-            The three phase engineering lifecycle I follow to ensure infrastructure is resilient against failure, secured by architecture, and automated for continuous delivery.
+            The three-phase engineering lifecycle I follow to ensure infrastructure is resilient against failure, secured by architecture, and automated for continuous delivery.
           </p>
         </div>
 
